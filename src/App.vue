@@ -5,6 +5,7 @@
                 v-for="item in items" 
                 :key="item.id" 
                 style="height:200px;"
+                @click="$event => {console.log(item.id)}"
             >
                 {{ item.text }}
             </li>
