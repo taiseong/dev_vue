@@ -23,5 +23,9 @@ module.exports = {
         // 커스텀 규칙 추가
         'vue/html-indent': ['warn', 4], // Vue 템플릿 들여쓰기 4칸
         'indent': ['warn', 4] // JS/TS 들여쓰기 4칸
+    },
+    globals: {
+        defineProps: 'readonly',
+        defineEmits: 'readonly'
     }
 };
