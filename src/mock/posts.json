@@ -1,0 +1,4 @@
+[
+  { "id": 1, "title": "테스트 글 1", "content": "내용1", "author": "홍길동" },
+  { "id": 2, "title": "테스트 글 2", "content": "내용2", "author": "김철수" }
+]

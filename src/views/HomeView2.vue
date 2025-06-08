@@ -1,24 +1,37 @@
 <template>
     <div class="wrapper">
-<!-- Sidebar -->
-        <div class="sidebar" data-background-color="dark">
+        <!-- Sidebar -->
+        <div
+            class="sidebar"
+            data-background-color="dark"
+        >
             <div class="sidebar-logo">
                 <!-- Logo Header -->
-                <div class="logo-header" data-background-color="dark">
-                    <a href="../index.html" class="logo">
-                        <img src="../assets/img/kaiadmin/logo_light.svg" alt="navbar brand" class="navbar-brand"
-                            height="20" />
+                <div
+                    class="logo-header"
+                    data-background-color="dark"
+                >
+                    <a
+                        href="../index.html"
+                        class="logo"
+                    >
+                        <img
+                            src="../assets/img/kaiadmin/logo_light.svg"
+                            alt="navbar brand"
+                            class="navbar-brand"
+                            height="20"
+                        >
                     </a>
                     <div class="nav-toggle">
                         <button class="btn btn-toggle toggle-sidebar">
-                            <i class="gg-menu-right"></i>
+                            <i class="gg-menu-right" />
                         </button>
                         <button class="btn btn-toggle sidenav-toggler">
-                            <i class="gg-menu-left"></i>
+                            <i class="gg-menu-left" />
                         </button>
                     </div>
                     <button class="topbar-toggler more">
-                        <i class="gg-more-vertical-alt"></i>
+                        <i class="gg-more-vertical-alt" />
                     </button>
                 </div>
                 <!-- End Logo Header -->
@@ -27,12 +40,20 @@
                 <div class="sidebar-content">
                     <ul class="nav nav-secondary">
                         <li class="nav-item">
-                            <a data-bs-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
-                                <i class="fas fa-home"></i>
+                            <a
+                                data-bs-toggle="collapse"
+                                href="#dashboard"
+                                class="collapsed"
+                                aria-expanded="false"
+                            >
+                                <i class="fas fa-home" />
                                 <p>Dashboard</p>
-                                <span class="caret"></span>
+                                <span class="caret" />
                             </a>
-                            <div class="collapse" id="dashboard">
+                            <div
+                                id="dashboard"
+                                class="collapse"
+                            >
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="../../demo1/index.html">
@@ -44,17 +65,25 @@
                         </li>
                         <li class="nav-section">
                             <span class="sidebar-mini-icon">
-                                <i class="fa fa-ellipsis-h"></i>
+                                <i class="fa fa-ellipsis-h" />
                             </span>
-                            <h4 class="text-section">Components</h4>
+                            <h4 class="text-section">
+                                Components
+                            </h4>
                         </li>
                         <li class="nav-item">
-                            <a data-bs-toggle="collapse" href="#base">
-                                <i class="fas fa-layer-group"></i>
+                            <a
+                                data-bs-toggle="collapse"
+                                href="#base"
+                            >
+                                <i class="fas fa-layer-group" />
                                 <p>Base</p>
-                                <span class="caret"></span>
+                                <span class="caret" />
                             </a>
-                            <div class="collapse" id="base">
+                            <div
+                                id="base"
+                                class="collapse"
+                            >
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="../components/avatars.html">
@@ -105,12 +134,18 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a data-bs-toggle="collapse" href="#sidebarLayouts">
-                                <i class="fas fa-th-list"></i>
+                            <a
+                                data-bs-toggle="collapse"
+                                href="#sidebarLayouts"
+                            >
+                                <i class="fas fa-th-list" />
                                 <p>Sidebar Layouts</p>
-                                <span class="caret"></span>
+                                <span class="caret" />
                             </a>
-                            <div class="collapse" id="sidebarLayouts">
+                            <div
+                                id="sidebarLayouts"
+                                class="collapse"
+                            >
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="../sidebar-style-2.html">
@@ -126,12 +161,18 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a data-bs-toggle="collapse" href="#forms">
-                                <i class="fas fa-pen-square"></i>
+                            <a
+                                data-bs-toggle="collapse"
+                                href="#forms"
+                            >
+                                <i class="fas fa-pen-square" />
                                 <p>Forms</p>
-                                <span class="caret"></span>
+                                <span class="caret" />
                             </a>
-                            <div class="collapse" id="forms">
+                            <div
+                                id="forms"
+                                class="collapse"
+                            >
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="../forms/forms.html">
@@ -142,12 +183,18 @@
                             </div>
                         </li>
                         <li class="nav-item active submenu">
-                            <a data-bs-toggle="collapse" href="#tables">
-                                <i class="fas fa-table"></i>
+                            <a
+                                data-bs-toggle="collapse"
+                                href="#tables"
+                            >
+                                <i class="fas fa-table" />
                                 <p>Tables</p>
-                                <span class="caret"></span>
+                                <span class="caret" />
                             </a>
-                            <div class="collapse show" id="tables">
+                            <div
+                                id="tables"
+                                class="collapse show"
+                            >
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="../tables/tables.html">
@@ -163,12 +210,18 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a data-bs-toggle="collapse" href="#maps">
-                                <i class="fas fa-map-marker-alt"></i>
+                            <a
+                                data-bs-toggle="collapse"
+                                href="#maps"
+                            >
+                                <i class="fas fa-map-marker-alt" />
                                 <p>Maps</p>
-                                <span class="caret"></span>
+                                <span class="caret" />
                             </a>
-                            <div class="collapse" id="maps">
+                            <div
+                                id="maps"
+                                class="collapse"
+                            >
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="../maps/googlemaps.html">
@@ -184,12 +237,18 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a data-bs-toggle="collapse" href="#charts">
-                                <i class="far fa-chart-bar"></i>
+                            <a
+                                data-bs-toggle="collapse"
+                                href="#charts"
+                            >
+                                <i class="far fa-chart-bar" />
                                 <p>Charts</p>
-                                <span class="caret"></span>
+                                <span class="caret" />
                             </a>
-                            <div class="collapse" id="charts">
+                            <div
+                                id="charts"
+                                class="collapse"
+                            >
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="../charts/charts.html">
@@ -206,32 +265,44 @@
                         </li>
                         <li class="nav-item">
                             <a href="../widgets.html">
-                                <i class="fas fa-desktop"></i>
+                                <i class="fas fa-desktop" />
                                 <p>Widgets</p>
                                 <span class="badge badge-success">4</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="../../../documentation/index.html">
-                                <i class="fas fa-file"></i>
+                                <i class="fas fa-file" />
                                 <p>Documentation</p>
                                 <span class="badge badge-secondary">1</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a data-bs-toggle="collapse" href="#submenu">
-                                <i class="fas fa-bars"></i>
+                            <a
+                                data-bs-toggle="collapse"
+                                href="#submenu"
+                            >
+                                <i class="fas fa-bars" />
                                 <p>Menu Levels</p>
-                                <span class="caret"></span>
+                                <span class="caret" />
                             </a>
-                            <div class="collapse" id="submenu">
+                            <div
+                                id="submenu"
+                                class="collapse"
+                            >
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a data-bs-toggle="collapse" href="#subnav1">
+                                        <a
+                                            data-bs-toggle="collapse"
+                                            href="#subnav1"
+                                        >
                                             <span class="sub-item">Level 1</span>
-                                            <span class="caret"></span>
+                                            <span class="caret" />
                                         </a>
-                                        <div class="collapse" id="subnav1">
+                                        <div
+                                            id="subnav1"
+                                            class="collapse"
+                                        >
                                             <ul class="nav nav-collapse subnav">
                                                 <li>
                                                     <a href="#">
@@ -247,11 +318,17 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a data-bs-toggle="collapse" href="#subnav2">
+                                        <a
+                                            data-bs-toggle="collapse"
+                                            href="#subnav2"
+                                        >
                                             <span class="sub-item">Level 1</span>
-                                            <span class="caret"></span>
+                                            <span class="caret" />
                                         </a>
-                                        <div class="collapse" id="subnav2">
+                                        <div
+                                            id="subnav2"
+                                            class="collapse"
+                                        >
                                             <ul class="nav nav-collapse subnav">
                                                 <li>
                                                     <a href="#">
@@ -278,21 +355,31 @@
             <div class="main-header">
                 <div class="main-header-logo">
                     <!-- Logo Header -->
-                    <div class="logo-header" data-background-color="dark">
-                        <a href="../index.html" class="logo">
-                            <img src="@/assets/img/kaiadmin/logo_light.svg" alt="navbar brand" class="navbar-brand"
-                                height="20" />
+                    <div
+                        class="logo-header"
+                        data-background-color="dark"
+                    >
+                        <a
+                            href="../index.html"
+                            class="logo"
+                        >
+                            <img
+                                src="@/assets/img/kaiadmin/logo_light.svg"
+                                alt="navbar brand"
+                                class="navbar-brand"
+                                height="20"
+                            >
                         </a>
                         <div class="nav-toggle">
                             <button class="btn btn-toggle toggle-sidebar">
-                                <i class="gg-menu-right"></i>
+                                <i class="gg-menu-right" />
                             </button>
                             <button class="btn btn-toggle sidenav-toggler">
-                                <i class="gg-menu-left"></i>
+                                <i class="gg-menu-left" />
                             </button>
                         </div>
                         <button class="topbar-toggler more">
-                            <i class="gg-more-vertical-alt"></i>
+                            <i class="gg-more-vertical-alt" />
                         </button>
                     </div>
                     <!-- End Logo Header -->
@@ -301,42 +388,72 @@
                 <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom">
                     <div class="container-fluid">
                         <nav
-                            class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex">
+                            class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex"
+                        >
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <button type="submit" class="btn btn-search pe-1">
-                                        <i class="fa fa-search search-icon"></i>
+                                    <button
+                                        type="submit"
+                                        class="btn btn-search pe-1"
+                                    >
+                                        <i class="fa fa-search search-icon" />
                                     </button>
                                 </div>
-                                <input type="text" placeholder="Search ..." class="form-control" />
+                                <input
+                                    type="text"
+                                    placeholder="Search ..."
+                                    class="form-control"
+                                >
                             </div>
                         </nav>
 
                         <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
                             <li class="nav-item topbar-icon dropdown hidden-caret d-flex d-lg-none">
-                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                                    aria-expanded="false" aria-haspopup="true">
-                                    <i class="fa fa-search"></i>
+                                <a
+                                    class="nav-link dropdown-toggle"
+                                    data-bs-toggle="dropdown"
+                                    href="#"
+                                    role="button"
+                                    aria-expanded="false"
+                                    aria-haspopup="true"
+                                >
+                                    <i class="fa fa-search" />
                                 </a>
                                 <ul class="dropdown-menu dropdown-search animated fadeIn">
                                     <form class="navbar-left navbar-form nav-search">
                                         <div class="input-group">
-                                            <input type="text" placeholder="Search ..." class="form-control" />
+                                            <input
+                                                type="text"
+                                                placeholder="Search ..."
+                                                class="form-control"
+                                            >
                                         </div>
                                     </form>
                                 </ul>
                             </li>
                             <li class="nav-item topbar-icon dropdown hidden-caret">
-                                <a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fa fa-envelope"></i>
+                                <a
+                                    id="messageDropdown"
+                                    class="nav-link dropdown-toggle"
+                                    href="#"
+                                    role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                >
+                                    <i class="fa fa-envelope" />
                                 </a>
-                                <ul class="dropdown-menu messages-notif-box animated fadeIn"
-                                    aria-labelledby="messageDropdown">
+                                <ul
+                                    class="dropdown-menu messages-notif-box animated fadeIn"
+                                    aria-labelledby="messageDropdown"
+                                >
                                     <li>
                                         <div class="dropdown-title d-flex justify-content-between align-items-center">
                                             Messages
-                                            <a href="#" class="small">Mark all as read</a>
+                                            <a
+                                                href="#"
+                                                class="small"
+                                            >Mark all as read</a>
                                         </div>
                                     </li>
                                     <li>
@@ -344,7 +461,10 @@
                                             <div class="notif-center">
                                                 <a href="#">
                                                     <div class="notif-img">
-                                                        <img src="../assets/img/jm_denis.jpg" alt="Img Profile" />
+                                                        <img
+                                                            src="../assets/img/jm_denis.jpg"
+                                                            alt="Img Profile"
+                                                        >
                                                     </div>
                                                     <div class="notif-content">
                                                         <span class="subject">Jimmy Denis</span>
@@ -354,7 +474,10 @@
                                                 </a>
                                                 <a href="#">
                                                     <div class="notif-img">
-                                                        <img src="../assets/img/chadengle.jpg" alt="Img Profile" />
+                                                        <img
+                                                            src="../assets/img/chadengle.jpg"
+                                                            alt="Img Profile"
+                                                        >
                                                     </div>
                                                     <div class="notif-content">
                                                         <span class="subject">Chad</span>
@@ -364,7 +487,10 @@
                                                 </a>
                                                 <a href="#">
                                                     <div class="notif-img">
-                                                        <img src="../assets/img/mlane.jpg" alt="Img Profile" />
+                                                        <img
+                                                            src="../assets/img/mlane.jpg"
+                                                            alt="Img Profile"
+                                                        >
                                                     </div>
                                                     <div class="notif-content">
                                                         <span class="subject">Jhon Doe</span>
@@ -376,7 +502,10 @@
                                                 </a>
                                                 <a href="#">
                                                     <div class="notif-img">
-                                                        <img src="../assets/img/talha.jpg" alt="Img Profile" />
+                                                        <img
+                                                            src="../assets/img/talha.jpg"
+                                                            alt="Img Profile"
+                                                        >
                                                     </div>
                                                     <div class="notif-content">
                                                         <span class="subject">Talha</span>
@@ -388,19 +517,33 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a class="see-all" href="javascript:void(0);">See all messages<i
-                                                class="fa fa-angle-right"></i>
+                                        <a
+                                            class="see-all"
+                                            href="javascript:void(0);"
+                                        >See all messages<i
+                                            class="fa fa-angle-right"
+                                        />
                                         </a>
                                     </li>
                                 </ul>
                             </li>
                             <li class="nav-item topbar-icon dropdown hidden-caret">
-                                <a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fa fa-bell"></i>
+                                <a
+                                    id="notifDropdown"
+                                    class="nav-link dropdown-toggle"
+                                    href="#"
+                                    role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                >
+                                    <i class="fa fa-bell" />
                                     <span class="notification">4</span>
                                 </a>
-                                <ul class="dropdown-menu notif-box animated fadeIn" aria-labelledby="notifDropdown">
+                                <ul
+                                    class="dropdown-menu notif-box animated fadeIn"
+                                    aria-labelledby="notifDropdown"
+                                >
                                     <li>
                                         <div class="dropdown-title">
                                             You have 4 new notification
@@ -411,7 +554,7 @@
                                             <div class="notif-center">
                                                 <a href="#">
                                                     <div class="notif-icon notif-primary">
-                                                        <i class="fa fa-user-plus"></i>
+                                                        <i class="fa fa-user-plus" />
                                                     </div>
                                                     <div class="notif-content">
                                                         <span class="block"> New user registered </span>
@@ -420,7 +563,7 @@
                                                 </a>
                                                 <a href="#">
                                                     <div class="notif-icon notif-success">
-                                                        <i class="fa fa-comment"></i>
+                                                        <i class="fa fa-comment" />
                                                     </div>
                                                     <div class="notif-content">
                                                         <span class="block">
@@ -431,7 +574,10 @@
                                                 </a>
                                                 <a href="#">
                                                     <div class="notif-img">
-                                                        <img src="../assets/img/profile2.jpg" alt="Img Profile" />
+                                                        <img
+                                                            src="../assets/img/profile2.jpg"
+                                                            alt="Img Profile"
+                                                        >
                                                     </div>
                                                     <div class="notif-content">
                                                         <span class="block">
@@ -442,7 +588,7 @@
                                                 </a>
                                                 <a href="#">
                                                     <div class="notif-icon notif-danger">
-                                                        <i class="fa fa-heart"></i>
+                                                        <i class="fa fa-heart" />
                                                     </div>
                                                     <div class="notif-content">
                                                         <span class="block"> Farrah liked Admin </span>
@@ -453,15 +599,24 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a class="see-all" href="javascript:void(0);">See all notifications<i
-                                                class="fa fa-angle-right"></i>
+                                        <a
+                                            class="see-all"
+                                            href="javascript:void(0);"
+                                        >See all notifications<i
+                                            class="fa fa-angle-right"
+                                        />
                                         </a>
                                     </li>
                                 </ul>
                             </li>
                             <li class="nav-item topbar-icon dropdown hidden-caret">
-                                <a class="nav-link" data-bs-toggle="dropdown" href="#" aria-expanded="false">
-                                    <i class="fas fa-layer-group"></i>
+                                <a
+                                    class="nav-link"
+                                    data-bs-toggle="dropdown"
+                                    href="#"
+                                    aria-expanded="false"
+                                >
+                                    <i class="fas fa-layer-group" />
                                 </a>
                                 <div class="dropdown-menu quick-actions animated fadeIn">
                                     <div class="quick-actions-header">
@@ -471,50 +626,68 @@
                                     <div class="quick-actions-scroll scrollbar-outer">
                                         <div class="quick-actions-items">
                                             <div class="row m-0">
-                                                <a class="col-6 col-md-4 p-0" href="#">
+                                                <a
+                                                    class="col-6 col-md-4 p-0"
+                                                    href="#"
+                                                >
                                                     <div class="quick-actions-item">
                                                         <div class="avatar-item bg-danger rounded-circle">
-                                                            <i class="far fa-calendar-alt"></i>
+                                                            <i class="far fa-calendar-alt" />
                                                         </div>
                                                         <span class="text">Calendar</span>
                                                     </div>
                                                 </a>
-                                                <a class="col-6 col-md-4 p-0" href="#">
+                                                <a
+                                                    class="col-6 col-md-4 p-0"
+                                                    href="#"
+                                                >
                                                     <div class="quick-actions-item">
                                                         <div class="avatar-item bg-warning rounded-circle">
-                                                            <i class="fas fa-map"></i>
+                                                            <i class="fas fa-map" />
                                                         </div>
                                                         <span class="text">Maps</span>
                                                     </div>
                                                 </a>
-                                                <a class="col-6 col-md-4 p-0" href="#">
+                                                <a
+                                                    class="col-6 col-md-4 p-0"
+                                                    href="#"
+                                                >
                                                     <div class="quick-actions-item">
                                                         <div class="avatar-item bg-info rounded-circle">
-                                                            <i class="fas fa-file-excel"></i>
+                                                            <i class="fas fa-file-excel" />
                                                         </div>
                                                         <span class="text">Reports</span>
                                                     </div>
                                                 </a>
-                                                <a class="col-6 col-md-4 p-0" href="#">
+                                                <a
+                                                    class="col-6 col-md-4 p-0"
+                                                    href="#"
+                                                >
                                                     <div class="quick-actions-item">
                                                         <div class="avatar-item bg-success rounded-circle">
-                                                            <i class="fas fa-envelope"></i>
+                                                            <i class="fas fa-envelope" />
                                                         </div>
                                                         <span class="text">Emails</span>
                                                     </div>
                                                 </a>
-                                                <a class="col-6 col-md-4 p-0" href="#">
+                                                <a
+                                                    class="col-6 col-md-4 p-0"
+                                                    href="#"
+                                                >
                                                     <div class="quick-actions-item">
                                                         <div class="avatar-item bg-primary rounded-circle">
-                                                            <i class="fas fa-file-invoice-dollar"></i>
+                                                            <i class="fas fa-file-invoice-dollar" />
                                                         </div>
                                                         <span class="text">Invoice</span>
                                                     </div>
                                                 </a>
-                                                <a class="col-6 col-md-4 p-0" href="#">
+                                                <a
+                                                    class="col-6 col-md-4 p-0"
+                                                    href="#"
+                                                >
                                                     <div class="quick-actions-item">
                                                         <div class="avatar-item bg-secondary rounded-circle">
-                                                            <i class="fas fa-credit-card"></i>
+                                                            <i class="fas fa-credit-card" />
                                                         </div>
                                                         <span class="text">Payments</span>
                                                     </div>
@@ -526,11 +699,18 @@
                             </li>
 
                             <li class="nav-item topbar-user dropdown hidden-caret">
-                                <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#"
-                                    aria-expanded="false">
+                                <a
+                                    class="dropdown-toggle profile-pic"
+                                    data-bs-toggle="dropdown"
+                                    href="#"
+                                    aria-expanded="false"
+                                >
                                     <div class="avatar-sm">
-                                        <img src="../assets/img/profile.jpg" alt="..."
-                                            class="avatar-img rounded-circle" />
+                                        <img
+                                            src="../assets/img/profile.jpg"
+                                            alt="..."
+                                            class="avatar-img rounded-circle"
+                                        >
                                     </div>
                                     <span class="profile-username">
                                         <span class="op-7">Hi,</span>
@@ -542,26 +722,49 @@
                                         <li>
                                             <div class="user-box">
                                                 <div class="avatar-lg">
-                                                    <img src="@/assets/img/profile.jpg" alt="image profile"
-                                                        class="avatar-img rounded" />
+                                                    <img
+                                                        src="@/assets/img/profile.jpg"
+                                                        alt="image profile"
+                                                        class="avatar-img rounded"
+                                                    >
                                                 </div>
                                                 <div class="u-text">
                                                     <h4>Hizrian</h4>
-                                                    <p class="text-muted">hello@example.com</p>
-                                                    <a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View
+                                                    <p class="text-muted">
+                                                        hello@example.com
+                                                    </p>
+                                                    <a
+                                                        href="profile.html"
+                                                        class="btn btn-xs btn-secondary btn-sm"
+                                                    >View
                                                         Profile</a>
                                                 </div>
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">My Profile</a>
-                                            <a class="dropdown-item" href="#">My Balance</a>
-                                            <a class="dropdown-item" href="#">Inbox</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Account Setting</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Logout</a>
+                                            <div class="dropdown-divider" />
+                                            <a
+                                                class="dropdown-item"
+                                                href="#"
+                                            >My Profile</a>
+                                            <a
+                                                class="dropdown-item"
+                                                href="#"
+                                            >My Balance</a>
+                                            <a
+                                                class="dropdown-item"
+                                                href="#"
+                                            >Inbox</a>
+                                            <div class="dropdown-divider" />
+                                            <a
+                                                class="dropdown-item"
+                                                href="#"
+                                            >Account Setting</a>
+                                            <div class="dropdown-divider" />
+                                            <a
+                                                class="dropdown-item"
+                                                href="#"
+                                            >Logout</a>
                                         </li>
                                     </div>
                                 </ul>
@@ -575,21 +778,23 @@
             <div class="container">
                 <div class="page-inner">
                     <div class="page-header">
-                        <h3 class="fw-bold mb-3">DataTables.Net</h3>
+                        <h3 class="fw-bold mb-3">
+                            DataTables.Net
+                        </h3>
                         <ul class="breadcrumbs mb-3">
                             <li class="nav-home">
                                 <a href="#">
-                                    <i class="bi bi-house"></i>
+                                    <i class="bi bi-house" />
                                 </a>
                             </li>
                             <li class="separator">
-                                <i class="bi bi-arrow-right"></i>
+                                <i class="bi bi-arrow-right" />
                             </li>
                             <li class="nav-item">
                                 <a href="#">Tables</a>
                             </li>
                             <li class="separator">
-                                <i class="bi bi-arrow-right"></i>
+                                <i class="bi bi-arrow-right" />
                             </li>
                             <li class="nav-item">
                                 <a href="#">Datatables</a>
@@ -600,11 +805,16 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Multi Filter Select</h4>
+                                    <h4 class="card-title">
+                                        Multi Filter Select
+                                    </h4>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
-                                        <table id="multi-filter-select" class="display table table-striped table-hover">
+                                        <table
+                                            id="multi-filter-select"
+                                            class="display table table-striped table-hover"
+                                        >
                                             <thead>
                                                 <tr>
                                                     <th>Name</th>
@@ -657,30 +867,41 @@
                     <nav class="pull-left">
                         <ul class="nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="http://www.themekita.com">
+                                <a
+                                    class="nav-link"
+                                    href="http://www.themekita.com"
+                                >
                                     ThemeKita
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"> Help </a>
+                                <a
+                                    class="nav-link"
+                                    href="#"
+                                > Help </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"> Licenses </a>
+                                <a
+                                    class="nav-link"
+                                    href="#"
+                                > Licenses </a>
                             </li>
                         </ul>
                     </nav>
                     <div class="copyright">
-                        2024, made with <i class="fa fa-heart heart text-danger"></i> by
+                        2024, made with <i class="fa fa-heart heart text-danger" /> by
                         <a href="http://www.themekita.com">ThemeKita</a>
                     </div>
                     <div>
                         Distributed by
-                        <a target="_blank" href="https://themewagon.com/">ThemeWagon</a>.
+                        <a
+                            target="_blank"
+                            href="https://themewagon.com/"
+                        >ThemeWagon</a>.
                     </div>
                 </div>
             </footer>
         </div>
-
     </div>
 </template>
 

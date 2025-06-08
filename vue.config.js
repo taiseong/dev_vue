@@ -1,9 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
 module.exports = {
-	publicPath: '/',
+    publicPath: '/',
 
-	chainWebpack: config => {
+    chainWebpack: config => {
         if (config.module.rules.has('eslint')) {
             config.module
                 .rule('eslint')
@@ -15,10 +15,14 @@ module.exports = {
                 .exclude
                 .add(path.resolve(__dirname, 'src/assets/css'))
                 .add(path.resolve(__dirname, 'src/assets/js'))
-                .add(path.resolve(__dirname, 'src/assets/js/plugin/webfont/webfont.min.js'))
                 .end();
         }
-		config.resolve.alias.set('~', path.resolve(__dirname, './'));
-		config.resolve.alias.set('@', path.resolve(__dirname, 'src/'));
-	},
+        config.resolve.alias.set('~', path.resolve(__dirname, './'));
+        config.resolve.alias.set('@', path.resolve(__dirname, 'src/'));
+    },
+
+    devServer: {
+        host: '0.0.0.0',
+        allowedHosts: 'all',
+    },
 };

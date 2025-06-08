@@ -122,35 +122,29 @@
                         class="search-bar mb-4 d-flex"
                         @submit.prevent
                     >
-                        <div class="position-relative w-100">
-  <input
-    v-model="searchKeyword"
-    type="text"
-    class="form-control"  
-    placeholder="검색어를 입력하세요"
-    aria-label="검색"
-  >
-  <i
-    class="bi bi-search position-absolute top-50 end-0 translate-middle-y me-3 text-secondary"
-    style="cursor: pointer;"
-    @click="검색함수"
-  ></i>
-</div>
+                        <input
+                            v-model="searchKeyword"
+                            type="text"
+                            class="form-control me-2"
+                            placeholder="검색어를 입력하세요"
+                        >
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                        >
+                            검색
+                        </button>
                     </form>
 
-                    <BestListMobile
-                        :list="posts"
-                        @moveDetail="moveDetail"
-                    />
                     <PostListPc
                         v-if="!isMobile"
                         :posts="posts"
-                        @titleClick="moveDetail"
+                        @titleClick="goDetail"
                     />
                     <PostListMobile
                         v-else
                         :posts="posts"
-                        @rowClick="moveDetail"
+                        @rowClick="goDetail"
                     />
                 </main>
             </div>
@@ -172,7 +166,6 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import BestListMobile from '../components/BestListMobile.vue'
 import PostListPc from '../components/PostListPc.vue'
 import PostListMobile from '../components/PostListMobile.vue'
 
@@ -194,7 +187,7 @@ onBeforeUnmount(() => {
 const openSidebar = () => (sidebarOpen.value = true)
 const closeSidebar = () => (sidebarOpen.value = false)
 
-function moveDetail(id) {
+function goDetail(id) {
     // 상세 페이지 이동 로직
     alert('상세 페이지 이동: ' + id)
 }
