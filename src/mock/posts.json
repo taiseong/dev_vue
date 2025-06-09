@@ -1,4 +1,13 @@
 [
-  { "id": 1, "title": "테스트 글 1", "content": "내용1", "author": "홍길동" },
-  { "id": 2, "title": "테스트 글 2", "content": "내용2", "author": "김철수" }
+  { "post_id": 1, "board_id": 1, "board_type": 1, "title": "테스트 글 1", "content": "내용1", "like_count": 4, "dislike_count": 4, "view_count": 10, "reply_count": 0, "reg_name": "홍길동", "reg_datetime": "2025-06-09 16:22:11"},
+  { "post_id": 2, "board_id": 2, "board_type": 99, "title": "테스트 글 2", "content": "내용2", "like_count": 4, "dislike_count": 4, "view_count": 10, "reply_count": 0, "reg_name": "홍길동", "reg_datetime": "2025-06-09 14:22:11"},
+  { "post_id": 3, "board_id": 2, "board_type": 1, "title": "테스트 글 3", "content": "내용3", "like_count": 0, "dislike_count": 4, "view_count": 10, "reply_count": 6, "reg_name": "홍길동", "reg_datetime": "2025-06-08 18:22:11"},
+  { "post_id": 4, "board_id": 2, "board_type": 2, "title": "테스트 글 4", "content": "내용4", "like_count": 4, "dislike_count": 4, "view_count": 10, "reply_count": 6, "reg_name": "홍길동", "reg_datetime": "2025-03-01 18:22:11"},
+  { "post_id": 5, "board_id": 5, "board_type": 2, "title": "테스트 글 5", "content": "내용5", "like_count": 99, "dislike_count": 4, "view_count": 10, "reply_count": 6, "reg_name": "홍길동", "reg_datetime": "2025-03-01 18:22:11"},
+  { "post_id": 6, "board_id": 5, "board_type": 1, "title": "테스트 글 6", "content": "내용6", "like_count": 4, "dislike_count": 4, "view_count": 10, "reply_count": 6, "reg_name": "홍길동", "reg_datetime": "2025-03-01 18:22:11"},
+  { "post_id": 7, "board_id": 5, "board_type": 99, "title": "테스트 글 7", "content": "내용7", "like_count": 4, "dislike_count": 4, "view_count": 10, "reply_count": 6, "reg_name": "홍길동", "reg_datetime": "2024-03-01 18:22:11"},
+  { "post_id": 8, "board_id": 5, "board_type": 1, "title": "테스트 글 8", "content": "내용8", "like_count": 4, "dislike_count": 4, "view_count": 10, "reply_count": 6, "reg_name": "홍길동", "reg_datetime": "2025-03-01 18:22:11"},
+  { "post_id": 9, "board_id": 1, "board_type": 1, "title": "테스트 글 9", "content": "내용9", "like_count": 4, "dislike_count": 4, "view_count": 10, "reply_count": 6, "reg_name": "홍길동", "reg_datetime": "2025-03-01 18:22:11"},
+  { "post_id": 10, "board_id": 1, "board_type": 2, "title": "테스트 글 10", "content": "내용10", "like_count": 4, "dislike_count": 4, "view_count": 10, "reply_count": 6, "reg_name": "홍길동", "reg_datetime": "2025-03-01 18:22:11"},
+  { "post_id": 11, "board_id": 1, "board_type": 1, "title": "테스트 글 11", "content": "내용11", "like_count": 4, "dislike_count": 4, "view_count": 10, "reply_count": 6, "reg_name": "홍길동", "reg_datetime": "2025-03-01 18:22:11"}
 ]

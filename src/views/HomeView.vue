@@ -176,6 +176,9 @@ import BestListMobile from '../components/BestListMobile.vue'
 import PostListPc from '../components/PostListPc.vue'
 import PostListMobile from '../components/PostListMobile.vue'
 
+import mockPosts from '@/mock/posts.json'
+
+const posts = ref([])
 const sidebarOpen = ref(false)
 const isMobile = ref(window.innerWidth < 768)
 
@@ -186,6 +189,7 @@ const handleResize = () => {
 
 onMounted(() => {
     window.addEventListener('resize', handleResize)
+    fetchPosts();
 })
 onBeforeUnmount(() => {
     window.removeEventListener('resize', handleResize)
@@ -194,16 +198,25 @@ onBeforeUnmount(() => {
 const openSidebar = () => (sidebarOpen.value = true)
 const closeSidebar = () => (sidebarOpen.value = false)
 
+async function fetchPosts(){
+    try{
+        const response = await fetch('https://api.example.com/posts');
+        if(!response.ok){
+            throw new Error('error fetch 1')
+        }
+        posts.value = await response.json();
+    } catch(error) {
+        console.error('error fetch 2', error);
+        posts.value = mockPosts;
+    }
+}
+
 function moveDetail(id) {
     // 상세 페이지 이동 로직
     alert('상세 페이지 이동: ' + id)
 }
 
-const posts = [
-    { id: 1, title: '1아주아주아주아주아주아주아주아주아주아주 긴 게시글 제목 예시입니다', writer: '홍길동', date: '2025-06-07', comments: 5 },
-    { id: 2, title: '2아주아주아주아주아주아주아주아주아주아주 긴 게시글 제목 예시입니다', writer: '홍길동', date: '2025-06-07', comments: 5 },
-    // ...더 많은 게시글
-]
+
 
 </script>
 

@@ -15,13 +15,19 @@
                     <span class="post-title text-truncate whitespace-title">
                         {{ item.title }}
                     </span>
-                    <span class="badge bg-secondary rounded-pill ms-2 flex-shrink-0 reply-count">
-                        {{ item.comments }} <i class="bi bi-chat-left-text ms-1" />
+                    <span v-if="item.reply_count > 0" class="badge bg-secondary rounded-pill ms-2 flex-shrink-0 reply-count">
+                        {{ item.reply_count }} <i class="bi bi-chat-left-text ms-1" />
                     </span>
                 </div>
                 <div class="d-block w-100 mt-1">
-                    <div class="post-meta text-muted small">
-                        작성자1: {{ item.writer }} &nbsp;|&nbsp; {{ item.date }}
+                    <div class="post-meta text-muted small d-flex justify-content-between">
+                        <span>
+                            {{ codeStore.getBoardName(item.board_id) }} ({{ codeStore.getBoardType(item.board_id, item.board_type) }})<span class="separator"> | </span>조회 {{ item.view_count }}
+                            <i class="bi bi-hand-thumbs-up-fill text-danger"></i>{{ item.like_count }} <i class="bi bi-hand-thumbs-down-fill text-primary"></i>{{ item.like_count }}
+                        </span>
+                        <span class="ms-auto">
+                            {{ formatBestDatetime(item.reg_datetime) }}
+                        </span>
                     </div>
                 </div>
             </div>
@@ -30,6 +36,12 @@
 </template>
 
 <script setup>
+import { useCommonFunctions } from '@/composables/useCommonFunctions';
+import { useCodeStore } from '@/stores/codeStore'
+
+const { formatBestDatetime } = useCommonFunctions();
+
+const codeStore = useCodeStore();
 const props = defineProps({
     list: Array
 });
