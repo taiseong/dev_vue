@@ -150,8 +150,8 @@ body {
 }
 
 .header-bar {
-    min-height: 60px;
-    height: 60px;
+    min-height: 40px;
+    height: 40px;
     border-radius: 8px 8px 0 0;
     /*box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);*/
     background: var(--identity-color) !important;
@@ -281,10 +281,10 @@ body {
 
 /* ====== 게시판 타이틀 및 링크 ====== */
 .list-title {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: bold;
     color: var(--identity-color);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.4rem;
     letter-spacing: -0.5px;
 }
 
@@ -307,6 +307,12 @@ body {
     text-overflow: ellipsis;
 }
 
+.post-title.clicked {
+    color: #0e43df;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
 .reply-count {
     min-width: 38px;
 }
@@ -324,10 +330,14 @@ body {
 .whitespace-title {
     max-width: 480px;
     font-weight: 500;
-    font-size: 1.05rem;
+    font-size: .9rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.post-meta {
+    font-size: .8rem;
 }
 
 .separator {

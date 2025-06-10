@@ -12,14 +12,14 @@
             <nav class="navbar navbar-dark bg-light header-bar mx-auto">
                 <div class="w-100 d-flex align-items-center justify-content-center position-relative">
                     <button
-                        class="btn d-md-none position-absolute start-0 ms-2"
+                        class="btn d-md-none position-absolute start-0"
                         type="button"
                         style="z-index:2;"
                         @click="openSidebar"
                     >
                         <svg
-                            width="32"
-                            height="32"
+                            width="24"
+                            height="24"
                             viewBox="0 0 32 32"
                             fill="none"
                         >
@@ -49,7 +49,7 @@
                     <a
                         class="navbar-brand m-0"
                         href="#"
-                        style="font-weight:bold;font-size:1.5rem;"
+                        style="font-weight:bold;font-size:1.0rem;"
                     >MySite</a>
                 </div>
             </nav>
@@ -140,7 +140,7 @@
 
                     <BestListMobile
                         :list="posts"
-                        @moveDetail="moveDetail"
+                        @clickItem="moveDetail"
                     />
                     <PostListPc
                         v-if="!isMobile"
@@ -214,6 +214,9 @@ async function fetchPosts(){
     } catch(error) {
         console.error('error fetch 2', error);
         posts.value = mockPosts;
+        posts.value.sort((a, b) => b.view_count - a.view_count)
+        posts.value = posts.value.slice(0, 20);
+        posts.value.sort((a, b) => new Date(b.reg_datetime) - new Date(a.reg_datetime))
         /*
         const now = new Date()
         const fakerKO = new Faker({ locale: [ko] })
@@ -246,9 +249,9 @@ async function fetchPosts(){
     }
 }
 
-function moveDetail(post_id) {
+function moveDetail(postId) {
     // 상세 페이지 이동 로직
-    alert('상세 페이지 이동: ' + post_id)
+    alert('상세 페이지 이동: ' + postId)
 }
 
 
