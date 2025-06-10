@@ -67,5 +67,16 @@ export function useCommonFunctions() {
         }
     };
 
-    return { formatBestDatetime, formatPostDatetime };
+    const getRandomPastDate = (baseDate, minMinutes, maxMinutes, index) => {
+        // index가 0이면 baseDate(현재시각), index가 1이면 baseDate - (랜덤분), index가 2면 baseDate - (랜덤분1 + 랜덤분2)...
+        let date = new Date(baseDate)
+        let totalMinutes = 0
+        for (let i = 0; i < index; i++) {
+            totalMinutes += Math.floor(Math.random() * (maxMinutes - minMinutes + 1)) + minMinutes
+        }
+        date.setMinutes(date.getMinutes() - totalMinutes)
+        return date
+    }
+
+    return { formatBestDatetime, formatPostDatetime, getRandomPastDate };
 }

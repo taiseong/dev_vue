@@ -6,10 +6,10 @@
         <div class="post-list-responsive mb-4">
             <div
                 v-for="item in props.list"
-                :key="item.id"
+                :key="item.post_id"
                 class="post-table-row d-flex align-items-center px-3 py-2 border-bottom flex-wrap clickable-row"
                 style="cursor:pointer;"
-                @click="moveDetail(item.id)"
+                @click="moveDetail(item.post_id)"
             >
                 <div class="post-title-col flex-grow-1 d-flex align-items-center">
                     <span class="post-title text-truncate whitespace-title">

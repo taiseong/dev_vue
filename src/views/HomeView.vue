@@ -176,7 +176,13 @@ import BestListMobile from '../components/BestListMobile.vue'
 import PostListPc from '../components/PostListPc.vue'
 import PostListMobile from '../components/PostListMobile.vue'
 
+//import { useCodeStore } from '@/stores/codeStore'
+//import { useCommonFunctions } from '@/composables/useCommonFunctions';
 import mockPosts from '@/mock/posts.json'
+//import { faker, Faker, ko } from '@faker-js/faker'
+
+//const codeStore = useCodeStore();
+//const { getRandomPastDate } = useCommonFunctions();
 
 const posts = ref([])
 const sidebarOpen = ref(false)
@@ -208,12 +214,41 @@ async function fetchPosts(){
     } catch(error) {
         console.error('error fetch 2', error);
         posts.value = mockPosts;
+        /*
+        const now = new Date()
+        const fakerKO = new Faker({ locale: [ko] })
+        const boardIds = Object.keys(codeStore.boardId).map(Number);
+        const postLength = 1000;
+        posts.value = Array.from({ length: postLength }, (_, i) => {
+            const boardId = boardIds[Math.floor(Math.random() * boardIds.length)];
+            const boardTypes = Object.keys(codeStore.boardType[boardId]).map(Number);
+            const boardType = boardTypes[Math.floor(Math.random() * boardTypes.length)];
+            const regDatetime = getRandomPastDate(now, 1, 120, i)
+            return {
+                post_id: postLength - i,
+                board_id: boardId,
+                board_type: boardType,
+                title: fakerKO.lorem.sentence({min:1, max:6}),
+                content: fakerKO.lorem.paragraph(),
+                like_count: faker.number.int({ min: 0, max: 20 }),
+                dislike_count: faker.number.int({ min: 0, max: 20 }),
+                view_count: faker.number.int({ min: 0, max: 1000 }),
+                reply_count: faker.number.int({ min: 0, max: 12 }),
+                reg_name: fakerKO.person.lastName() + fakerKO.person.firstName(),
+                reg_datetime: regDatetime.toISOString()
+                .replace('T', ' ')
+                .slice(0, 19)
+            }
+        })
+        //posts.value.sort((a, b) => new Date(b.reg_datetime) - new Date(a.reg_datetime))
+        console.log(posts.value)
+        */
     }
 }
 
-function moveDetail(id) {
+function moveDetail(post_id) {
     // 상세 페이지 이동 로직
-    alert('상세 페이지 이동: ' + id)
+    alert('상세 페이지 이동: ' + post_id)
 }
 
 
