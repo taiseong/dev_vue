@@ -172,6 +172,7 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { useRouter } from 'vue-router'
 import BestListMobile from '../components/BestListMobile.vue'
 import PostListPc from '../components/PostListPc.vue'
 import PostListMobile from '../components/PostListMobile.vue'
@@ -184,6 +185,7 @@ import mockPosts from '@/mock/posts.json'
 //const codeStore = useCodeStore();
 //const { getRandomPastDate } = useCommonFunctions();
 
+const router = useRouter()
 const posts = ref([])
 const sidebarOpen = ref(false)
 const isMobile = ref(window.innerWidth < 768)
@@ -251,7 +253,8 @@ async function fetchPosts(){
 
 function moveDetail(postId) {
     // 상세 페이지 이동 로직
-    alert('상세 페이지 이동: ' + postId)
+    //alert('상세 페이지 이동: ' + postId)
+    router.push({ name: 'postDetail', params: { postId } })
 }
 
 
