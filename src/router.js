@@ -25,12 +25,10 @@ const router = createRouter({
     history: createWebHistory(),
     scrollBehavior(to, from, savedPosition) {
         if (savedPosition) {
-            // 뒤로가기/앞으로가기 시 이전 스크롤 위치로 이동
-            return savedPosition
-        } else {
-            // 그 외에는 맨 위로 이동
-            return { top: 0 }
+            //return savedPosition;
+            return { ...savedPosition, behavior: 'instant' } // { left, top }만 있으면 즉시 이동
         }
+        return { top: 0 }
     },
     routes
 })

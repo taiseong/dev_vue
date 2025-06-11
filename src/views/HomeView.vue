@@ -173,9 +173,9 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
-import BestListMobile from '../components/BestListMobile.vue'
-import PostListPc from '../components/PostListPc.vue'
-import PostListMobile from '../components/PostListMobile.vue'
+import BestListMobile from '@/components/BestListMobile.vue'
+import PostListPc from '@/components/PostListPc.vue'
+import PostListMobile from '@/components/PostListMobile.vue'
 
 //import { useCodeStore } from '@/stores/codeStore'
 //import { useCommonFunctions } from '@/composables/useCommonFunctions';
@@ -189,6 +189,7 @@ const router = useRouter()
 const posts = ref([])
 const sidebarOpen = ref(false)
 const isMobile = ref(window.innerWidth < 768)
+const searchKeyword = ref('')
 
 const handleResize = () => {
     isMobile.value = window.innerWidth < 768
@@ -196,10 +197,12 @@ const handleResize = () => {
 }
 
 onMounted(() => {
+    console.log('onMounted')
     window.addEventListener('resize', handleResize)
     fetchPosts();
 })
 onBeforeUnmount(() => {
+    console.log('onBeforeUnmount')
     window.removeEventListener('resize', handleResize)
 })
 

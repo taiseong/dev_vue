@@ -99,16 +99,21 @@
 
 :root {
     --bs-body-font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', Arial, sans-serif;
-    --identity-color: #3ed768
+    --identity-color: #3ed768;
+    /*scroll-behavior: auto;*/
 }
 
 /* ====== 전체 레이아웃 및 배경 ====== */
 html,
 body {
-    height: 100%;
     min-height: 100%;
     overflow-x: hidden;
+    overflow-y: auto;
     font-family: var(--bs-body-font-family);
+}
+
+html {
+    height: 100%;
 }
 
 body {
