@@ -142,16 +142,10 @@
                         :list="posts"
                         @clickItem="moveDetail"
                     />
-                    <PostListPc
-                        v-if="!isMobile"
-                        :posts="posts"
-                        @titleClick="moveDetail"
-                    />
-                    <PostListMobile
-                        v-else
-                        :posts="posts"
-                        @rowClick="moveDetail"
-                    />
+                    <div ref="sentinel">{{ sentinelText }}</div>
+
+                    <button @click="fetchPosts">더보기</button>
+                    
                 </main>
             </div>
 
@@ -171,11 +165,11 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, onBeforeUnmount, onUpdated } from 'vue'
 import { useRouter } from 'vue-router'
 import BestListMobile from '@/components/BestListMobile.vue'
-import PostListPc from '@/components/PostListPc.vue'
-import PostListMobile from '@/components/PostListMobile.vue'
+//import PostListPc from '@/components/PostListPc.vue'
+//import PostListMobile from '@/components/PostListMobile.vue'
 
 //import { useCodeStore } from '@/stores/codeStore'
 //import { useCommonFunctions } from '@/composables/useCommonFunctions';
@@ -187,6 +181,13 @@ import mockPosts from '@/mock/posts.json'
 
 const router = useRouter()
 const posts = ref([])
+const pageNum = ref(1)
+const pageSize = 20;
+const sentinel = ref(null)
+const sentinelText = ref('로딩중...')
+const isLoading = ref(false)
+const hasMore = ref(true)
+let observer
 const sidebarOpen = ref(false)
 const isMobile = ref(window.innerWidth < 768)
 const searchKeyword = ref('')
@@ -199,17 +200,40 @@ const handleResize = () => {
 onMounted(() => {
     console.log('onMounted')
     window.addEventListener('resize', handleResize)
-    fetchPosts();
+    //fetchPosts();
+    observer = new IntersectionObserver(([entry]) => {
+        if(entry.isIntersecting && hasMore.value){
+            fetchPosts();
+        }
+    },{
+        root: null,
+        threshold: 1.0
+    })
+    if(sentinel.value){
+        observer.observe(sentinel.value)
+    }
 })
 onBeforeUnmount(() => {
     console.log('onBeforeUnmount')
     window.removeEventListener('resize', handleResize)
+    if(observer && sentinel.value){
+        observer.unobserve(sentinel.value)
+    }
+})
+onUpdated(() => {
+    console.log('onUpdated')
 })
 
 const openSidebar = () => (sidebarOpen.value = true)
 const closeSidebar = () => (sidebarOpen.value = false)
 
-async function fetchPosts(){
+const fetchPosts = async () => {
+    console.log('fetchPosts')
+    if(isLoading.value || !hasMore.value){
+        return;
+    }
+    isLoading.value = true;
+    await setTimeout(()=>{}, 1000) // 로딩 딜레이 흉내
     try{
         const response = await fetch('https://api.example.com/posts');
         if(!response.ok){
@@ -218,10 +242,20 @@ async function fetchPosts(){
         posts.value = await response.json();
     } catch(error) {
         console.error('error fetch 2', error);
-        posts.value = mockPosts;
-        posts.value.sort((a, b) => b.view_count - a.view_count)
-        posts.value = posts.value.slice(0, 20);
-        posts.value.sort((a, b) => new Date(b.reg_datetime) - new Date(a.reg_datetime))
+
+        let tempPosts = mockPosts;
+        tempPosts.sort((a, b) => b.view_count - a.view_count)
+        tempPosts = tempPosts.slice(pageNum.value * pageSize, (pageNum.value * pageSize) + pageSize);
+        tempPosts.sort((a, b) => new Date(b.reg_datetime) - new Date(a.reg_datetime))
+        console.log(tempPosts)
+        posts.value.push(...tempPosts);
+        pageNum.value++;
+        console.log(posts.value)
+
+        if (pageNum.value > 5){
+            sentinelText.value = '마지막이당';
+            hasMore.value = false;
+        }
         /*
         const now = new Date()
         const fakerKO = new Faker({ locale: [ko] })
@@ -252,6 +286,7 @@ async function fetchPosts(){
         console.log(posts.value)
         */
     }
+    isLoading.value = false
 }
 
 function moveDetail(postId) {
@@ -264,4 +299,10 @@ function moveDetail(postId) {
 
 </script>
 
-<style></style>
+<style>
+.loading {
+  text-align: center;
+  padding: 16px;
+  color: #888;
+}
+</style>
