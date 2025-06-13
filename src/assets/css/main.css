@@ -99,15 +99,21 @@
 
 :root {
     --bs-body-font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', Arial, sans-serif;
+    --identity-color: #3ed768;
+    /*scroll-behavior: auto;*/
 }
 
 /* ====== 전체 레이아웃 및 배경 ====== */
 html,
 body {
-    height: 100%;
     min-height: 100%;
     overflow-x: hidden;
+    overflow-y: auto;
     font-family: var(--bs-body-font-family);
+}
+
+html {
+    height: 100%;
 }
 
 body {
@@ -149,11 +155,11 @@ body {
 }
 
 .header-bar {
-    min-height: 60px;
-    height: 60px;
+    min-height: 40px;
+    height: 40px;
     border-radius: 8px 8px 0 0;
     /*box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);*/
-    background: #3ed768 !important;
+    background: var(--identity-color) !important;
 }
 
 .header-bar .navbar-brand {
@@ -280,10 +286,10 @@ body {
 
 /* ====== 게시판 타이틀 및 링크 ====== */
 .list-title {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: bold;
-    color: #343a40;
-    margin-bottom: 0.75rem;
+    color: var(--identity-color);
+    margin-bottom: 0.4rem;
     letter-spacing: -0.5px;
 }
 
@@ -306,6 +312,12 @@ body {
     text-overflow: ellipsis;
 }
 
+.post-title.clicked {
+    color: #0e43df;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
 .reply-count {
     min-width: 38px;
 }
@@ -323,10 +335,20 @@ body {
 .whitespace-title {
     max-width: 480px;
     font-weight: 500;
-    font-size: 1.05rem;
+    font-size: .9rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.post-meta {
+    font-size: .8rem;
+}
+
+.separator {
+  opacity: 0.5;
+  color: #999;
+  padding: 0 0.3em;
 }
 
 /* ====== 반응형 (1024px 이하) ====== */
@@ -411,11 +433,9 @@ body {
     /* 모바일 행 클릭 효과 */
     .clickable-row {
         cursor: pointer;
-        background: #f8f9fa;
     }
 
     .clickable-row:active {
-        background: #e9ecef;
     }
 
     .whitespace-title {
