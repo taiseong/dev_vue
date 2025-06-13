@@ -290,12 +290,6 @@ const fetchPosts = async () => {
 }
 
 
-const posts2 = [
-    { id: 1, title: '1아주아주아주아주아주아주아주아주아주아주 긴 게시글 제목 예시입니다', writer: '홍길동', date: '2025-06-07', comments: 5 },
-    { id: 2, title: '2아주아주아주아주1아주아주아주아주아주아주 긴 게시글 제목 예시입니다', writer: '홍길동', date: '2025-06-07', comments: 5 },
-    // ...더 많은 게시글
-]
-
 function moveDetail(postId) {
     // 상세 페이지 이동 로직
     //alert('상세 페이지 이동: ' + postId)
