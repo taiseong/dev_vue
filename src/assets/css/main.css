@@ -110,6 +110,7 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
     font-family: var(--bs-body-font-family);
+    touch-action: manipulation;
 }
 
 html {

@@ -165,7 +165,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount, onUpdated } from 'vue'
+import { ref, onMounted, onBeforeUnmount, onUpdated, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import BestListMobile from '@/components/BestListMobile.vue'
 //import PostListPc from '@/components/PostListPc.vue'
@@ -224,9 +224,21 @@ onUpdated(() => {
     console.log('onUpdated')
 })
 
-const openSidebar = () => (sidebarOpen.value = true)
+const openSidebar = () => {
+    console.log('openSidebar 클릭됨', Date.now())
+    sidebarOpen.value = true
+}
 const closeSidebar = () => (sidebarOpen.value = false)
 
+watch(sidebarOpen, (val) => {
+  console.log('sidebarOpen 값 변경:', val, Date.now())
+})
+document.addEventListener('touchstart', () => {
+  console.time('touch-click delay');
+});
+document.addEventListener('click', () => {
+  console.timeEnd('touch-click delay');
+});
 const fetchPosts = async () => {
     console.log('fetchPosts')
     if(isLoading.value || !hasMore.value){
