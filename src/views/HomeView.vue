@@ -304,7 +304,7 @@ const fetchPosts = async () => {
 
 function moveDetail(postId) {
     // 상세 페이지 이동 로직
-    //alert('상세 페이지 이동: ' + postId111111)
+    //alert('상세 페이지 이동: ' + postId111111222)
     router.push({ name: 'postDetail', params: { postId } })
 }
 
