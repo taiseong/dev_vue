@@ -1,353 +1,92 @@
 <template>
-    <!-- Sidebar -->
-    <div
-        class="sidebar"
-        data-background-color="dark"
+    <div>
+    <!-- 레프트 메뉴(PC: 항상, 모바일: 토글/푸시) -->
+    <nav
+        :class="[
+            'sidebar',
+            'bg-light',
+            'border-end',
+            'vh-100',
+            'p-3',
+            stateStore.isMobile && stateStore.sidebarOpen ? 'sidebar-open' : ''
+        ]"
     >
-        <div class="sidebar-logo">
-            <!-- Logo Header -->
-            <div
-                class="logo-header"
-                data-background-color="dark"
-            >
+        <!-- 영역1: 로고 + 설정버튼 -->
+        <div class="sidebar-section d-flex align-items-center justify-content-between mb-3">
+            <span
+                class="sidebar-logo fw-bold"
+                style="font-size:1.2rem;"
+            >LOGO</span>
+            <button class="btn btn-outline-secondary btn-sm">
+                <i class="bi bi-gear" /> <!-- Bootstrap Icons 사용시 -->
+                설정
+            </button>
+        </div>
+        <!-- 영역2: 로그인 버튼 -->
+        <div class="sidebar-section mb-3">
+            <button class="btn btn-primary w-100">
+                로그인
+            </button>
+        </div>
+        <!-- 영역3: 기존 메뉴 -->
+        <ul class="nav flex-column">
+            <li class="nav-item">
                 <a
-                    href="../index.html"
-                    class="logo"
-                >
-                    <img
-                        src="../assets/img/kaiadmin/logo_light.svg"
-                        alt="navbar brand"
-                        class="navbar-brand"
-                        height="20"
-                    >
-                </a>
-                <div class="nav-toggle">
-                    <button class="btn btn-toggle toggle-sidebar">
-                        <i class="gg-menu-right" />
-                    </button>
-                    <button class="btn btn-toggle sidenav-toggler">
-                        <i class="gg-menu-left" />
-                    </button>
-                </div>
-                <button class="topbar-toggler more">
-                    <i class="gg-more-vertical-alt" />
-                </button>
+                    class="nav-link active"
+                    href="#"
+                >대시보드</a>
+            </li>
+            <li class="nav-item">
+                <a
+                    class="nav-link"
+                    href="#"
+                >메뉴A</a>
+            </li>
+            <li class="nav-item">
+                <a
+                    class="nav-link"
+                    href="#"
+                >메뉴B</a>
+            </li>
+        </ul>
+    </nav>
+    <div
+                v-if="stateStore.sidebarOpen && stateStore.isMobile"
+                class="offcanvas-backdrop fade show"
+                style="z-index: 1040;"
+                @click="closeSidebar"
+            />
             </div>
-            <!-- End Logo Header -->
-        </div>
-        <div class="sidebar-wrapper scrollbar scrollbar-inner">
-            <div class="sidebar-content">
-                <ul class="nav nav-secondary">
-                    <li class="nav-item">
-                        <a
-                            data-bs-toggle="collapse"
-                            href="#dashboard"
-                            class="collapsed"
-                            aria-expanded="false"
-                        >
-                            <i class="fas fa-home" />
-                            <p>Dashboard</p>
-                            <span class="caret" />
-                        </a>
-                        <div
-                            id="dashboard"
-                            class="collapse"
-                        >
-                            <ul class="nav nav-collapse">
-                                <li>
-                                    <a href="../../demo1/index.html">
-                                        <span class="sub-item">Dashboard 1</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-section">
-                        <span class="sidebar-mini-icon">
-                            <i class="fa fa-ellipsis-h" />
-                        </span>
-                        <h4 class="text-section">
-                            Components
-                        </h4>
-                    </li>
-                    <li class="nav-item">
-                        <a
-                            data-bs-toggle="collapse"
-                            href="#base"
-                        >
-                            <i class="fas fa-layer-group" />
-                            <p>Base</p>
-                            <span class="caret" />
-                        </a>
-                        <div
-                            id="base"
-                            class="collapse"
-                        >
-                            <ul class="nav nav-collapse">
-                                <li>
-                                    <a href="../components/avatars.html">
-                                        <span class="sub-item">Avatars</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../components/buttons.html">
-                                        <span class="sub-item">Buttons</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../components/gridsystem.html">
-                                        <span class="sub-item">Grid System</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../components/panels.html">
-                                        <span class="sub-item">Panels</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../components/notifications.html">
-                                        <span class="sub-item">Notifications</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../components/sweetalert.html">
-                                        <span class="sub-item">Sweet Alert</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../components/font-awesome-icons.html">
-                                        <span class="sub-item">Font Awesome Icons</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../components/simple-line-icons.html">
-                                        <span class="sub-item">Simple Line Icons</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../components/typography.html">
-                                        <span class="sub-item">Typography</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a
-                            data-bs-toggle="collapse"
-                            href="#sidebarLayouts"
-                        >
-                            <i class="fas fa-th-list" />
-                            <p>Sidebar Layouts</p>
-                            <span class="caret" />
-                        </a>
-                        <div
-                            id="sidebarLayouts"
-                            class="collapse"
-                        >
-                            <ul class="nav nav-collapse">
-                                <li>
-                                    <a href="../sidebar-style-2.html">
-                                        <span class="sub-item">Sidebar Style 2</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../icon-menu.html">
-                                        <span class="sub-item">Icon Menu</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a
-                            data-bs-toggle="collapse"
-                            href="#forms"
-                        >
-                            <i class="fas fa-pen-square" />
-                            <p>Forms</p>
-                            <span class="caret" />
-                        </a>
-                        <div
-                            id="forms"
-                            class="collapse"
-                        >
-                            <ul class="nav nav-collapse">
-                                <li>
-                                    <a href="../forms/forms.html">
-                                        <span class="sub-item">Basic Form</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item active submenu">
-                        <a
-                            data-bs-toggle="collapse"
-                            href="#tables"
-                        >
-                            <i class="fas fa-table" />
-                            <p>Tables</p>
-                            <span class="caret" />
-                        </a>
-                        <div
-                            id="tables"
-                            class="collapse show"
-                        >
-                            <ul class="nav nav-collapse">
-                                <li>
-                                    <a href="../tables/tables.html">
-                                        <span class="sub-item">Basic Table</span>
-                                    </a>
-                                </li>
-                                <li class="active">
-                                    <a href="../tables/datatables.html">
-                                        <span class="sub-item">Datatables</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a
-                            data-bs-toggle="collapse"
-                            href="#maps"
-                        >
-                            <i class="fas fa-map-marker-alt" />
-                            <p>Maps</p>
-                            <span class="caret" />
-                        </a>
-                        <div
-                            id="maps"
-                            class="collapse"
-                        >
-                            <ul class="nav nav-collapse">
-                                <li>
-                                    <a href="../maps/googlemaps.html">
-                                        <span class="sub-item">Google Maps</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../maps/jsvectormap.html">
-                                        <span class="sub-item">Jsvectormap</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a
-                            data-bs-toggle="collapse"
-                            href="#charts"
-                        >
-                            <i class="far fa-chart-bar" />
-                            <p>Charts</p>
-                            <span class="caret" />
-                        </a>
-                        <div
-                            id="charts"
-                            class="collapse"
-                        >
-                            <ul class="nav nav-collapse">
-                                <li>
-                                    <a href="../charts/charts.html">
-                                        <span class="sub-item">Chart Js</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../charts/sparkline.html">
-                                        <span class="sub-item">Sparkline</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="../widgets.html">
-                            <i class="fas fa-desktop" />
-                            <p>Widgets</p>
-                            <span class="badge badge-success">4</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="../../../documentation/index.html">
-                            <i class="fas fa-file" />
-                            <p>Documentation</p>
-                            <span class="badge badge-secondary">1</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a
-                            data-bs-toggle="collapse"
-                            href="#submenu"
-                        >
-                            <i class="fas fa-bars" />
-                            <p>Menu Levels</p>
-                            <span class="caret" />
-                        </a>
-                        <div
-                            id="submenu"
-                            class="collapse"
-                        >
-                            <ul class="nav nav-collapse">
-                                <li>
-                                    <a
-                                        data-bs-toggle="collapse"
-                                        href="#subnav1"
-                                    >
-                                        <span class="sub-item">Level 1</span>
-                                        <span class="caret" />
-                                    </a>
-                                    <div
-                                        id="subnav1"
-                                        class="collapse"
-                                    >
-                                        <ul class="nav nav-collapse subnav">
-                                            <li>
-                                                <a href="#">
-                                                    <span class="sub-item">Level 2</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <span class="sub-item">Level 2</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a
-                                        data-bs-toggle="collapse"
-                                        href="#subnav2"
-                                    >
-                                        <span class="sub-item">Level 1</span>
-                                        <span class="caret" />
-                                    </a>
-                                    <div
-                                        id="subnav2"
-                                        class="collapse"
-                                    >
-                                        <ul class="nav nav-collapse subnav">
-                                            <li>
-                                                <a href="#">
-                                                    <span class="sub-item">Level 2</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="sub-item">Level 1</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- End Sidebar -->
 </template>
+<script setup>
+import { onMounted, onBeforeUnmount, watch, onActivated, onDeactivated } from 'vue'
+import { useStateStore } from '@/stores/useStateStore'
+
+const stateStore = useStateStore();
+
+const closeSidebar = () => (stateStore.sidebarOpen = false)
+
+const handleResize = () => {
+    if (!stateStore.isMobile) stateStore.sidebarOpen = false
+}
+
+onMounted(() => {
+    window.addEventListener('resize', handleResize)
+    stateStore.sidebarOpen = false;
+})
+onBeforeUnmount(() => {
+    window.removeEventListener('resize', handleResize)
+})
+
+watch(stateStore.sidebarOpen, (val) => {
+  console.log('sidebarOpen 값 변경:', val, Date.now())
+})
+onActivated(() => {
+  console.log('메뉴 활성화됨!') // 뒤로가기 등으로 다시 나타날 때마다 실행
+    stateStore.sidebarOpen = false;
+})
+onDeactivated(() => {
+  console.log('메뉴 비활성화됨!') // 상세로 이동 등으로 사라질 때 실행
+    stateStore.sidebarOpen = false;
+})
+</script>

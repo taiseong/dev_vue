@@ -15,7 +15,7 @@
                         class="btn d-md-none position-absolute start-0"
                         type="button"
                         style="z-index:2;"
-                        @click="openSidebar"
+                        @click="stateStore.openSidebar"
                     >
                         <svg
                             width="24"
@@ -55,65 +55,12 @@
             </nav>
 
             <!-- 오버레이: 모바일에서만 사이드바 열릴 때 표시 -->
-            <div
-                v-if="sidebarOpen && isMobile"
-                class="offcanvas-backdrop fade show"
-                style="z-index: 1040;"
-                @click="closeSidebar"
-            />
+            
 
             <!-- 메인 레이아웃 (레프트 메뉴+바디) -->
             <div class="content-row d-flex w-100 flex-grow-1">
-                <!-- 레프트 메뉴(PC: 항상, 모바일: 토글/푸시) -->
-                <nav
-                    :class="[
-                        'sidebar',
-                        'bg-light',
-                        'border-end',
-                        'vh-100',
-                        'p-3',
-                        isMobile && sidebarOpen ? 'sidebar-open' : ''
-                    ]"
-                >
-                    <!-- 영역1: 로고 + 설정버튼 -->
-                    <div class="sidebar-section d-flex align-items-center justify-content-between mb-3">
-                        <span
-                            class="sidebar-logo fw-bold"
-                            style="font-size:1.2rem;"
-                        >LOGO</span>
-                        <button class="btn btn-outline-secondary btn-sm">
-                            <i class="bi bi-gear" /> <!-- Bootstrap Icons 사용시 -->
-                            설정
-                        </button>
-                    </div>
-                    <!-- 영역2: 로그인 버튼 -->
-                    <div class="sidebar-section mb-3">
-                        <button class="btn btn-primary w-100">
-                            로그인
-                        </button>
-                    </div>
-                    <!-- 영역3: 기존 메뉴 -->
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a
-                                class="nav-link active"
-                                href="#"
-                            >대시보드</a>
-                        </li>
-                        <li class="nav-item">
-                            <a
-                                class="nav-link"
-                                href="#"
-                            >메뉴A</a>
-                        </li>
-                        <li class="nav-item">
-                            <a
-                                class="nav-link"
-                                href="#"
-                            >메뉴B</a>
-                        </li>
-                    </ul>
-                </nav>
+                
+                <LeftMenu></LeftMenu>
 
                 <!-- 바디(본문) -->
                 <main class="body-content flex-grow-1 px-4 py-3">
@@ -165,9 +112,14 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount, onUpdated, watch } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
+import LeftMenu from '@/components/LeftMenu.vue'
 import BestListMobile from '@/components/BestListMobile.vue'
+import { useStateStore } from '@/stores/useStateStore'
+
+const stateStore = useStateStore();
+
 //import PostListPc from '@/components/PostListPc.vue'
 //import PostListMobile from '@/components/PostListMobile.vue'
 
@@ -188,18 +140,10 @@ const sentinelText = ref('로딩중...')
 const isLoading = ref(false)
 const hasMore = ref(true)
 let observer
-const sidebarOpen = ref(false)
-const isMobile = ref(window.innerWidth < 768)
 const searchKeyword = ref('')
-
-const handleResize = () => {
-    isMobile.value = window.innerWidth < 768
-    if (!isMobile.value) sidebarOpen.value = false
-}
 
 onMounted(() => {
     console.log('onMounted')
-    window.addEventListener('resize', handleResize)
     //fetchPosts();
     observer = new IntersectionObserver(([entry]) => {
         if(entry.isIntersecting && hasMore.value){
@@ -215,24 +159,11 @@ onMounted(() => {
 })
 onBeforeUnmount(() => {
     console.log('onBeforeUnmount')
-    window.removeEventListener('resize', handleResize)
     if(observer && sentinel.value){
         observer.unobserve(sentinel.value)
     }
 })
-onUpdated(() => {
-    console.log('onUpdated')
-})
 
-const openSidebar = () => {
-    console.log('openSidebar 클릭됨', Date.now())
-    sidebarOpen.value = true
-}
-const closeSidebar = () => (sidebarOpen.value = false)
-
-watch(sidebarOpen, (val) => {
-  console.log('sidebarOpen 값 변경:', val, Date.now())
-})
 document.addEventListener('touchstart', () => {
   console.time('touch-click delay');
 });
@@ -245,7 +176,7 @@ const fetchPosts = async () => {
         return;
     }
     isLoading.value = true;
-    await new Promise(resolve => setTimeout(resolve, 2000))
+    await new Promise(resolve => setTimeout(resolve, 1000))
     try{
         const response = await fetch('https://api.example.com/posts');
         if(!response.ok){

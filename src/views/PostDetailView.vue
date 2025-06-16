@@ -6,7 +6,7 @@
             <nav class="navbar navbar-dark bg-light header-bar mx-auto">
                 <div class="w-100 d-flex align-items-center justify-content-center position-relative">
                     <button class="btn d-md-none position-absolute start-0" type="button" style="z-index:2;"
-                        @click="openSidebar">
+                        @click="stateStore.openSidebar">
                         <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
                             <rect y="4" width="32" height="4" rx="2" fill="#fff" />
                             <rect y="14" width="32" height="4" rx="2" fill="#fff" />
@@ -20,6 +20,7 @@
             <!-- 메인 레이아웃 (레프트 메뉴+바디) -->
             <div class="content-row d-flex w-100 flex-grow-1">
 
+                <LeftMenu></LeftMenu>
 
                 <!-- 바디(본문) -->
                 <main class="body-content flex-grow-1 px-4 py-3">
@@ -79,8 +80,12 @@
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 
-import mockPosts from '@/mock/posts.json'
+import LeftMenu from '@/components/LeftMenu.vue'
 
+import mockPosts from '@/mock/posts.json'
+import { useStateStore } from '@/stores/useStateStore'
+
+const stateStore = useStateStore();
 const route = useRoute()
 const postId = Number(route.params.postId)
 const data = ref({});
