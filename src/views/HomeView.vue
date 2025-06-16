@@ -245,7 +245,7 @@ const fetchPosts = async () => {
         return;
     }
     isLoading.value = true;
-    await setTimeout(()=>{}, 1000) // 로딩 딜레이 흉내
+    await new Promise(resolve => setTimeout(resolve, 2000))
     try{
         const response = await fetch('https://api.example.com/posts');
         if(!response.ok){
