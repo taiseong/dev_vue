@@ -12,10 +12,17 @@
                 @click="clickItem(item.post_id)"
             >
                 <div class="post-title-col flex-grow-1 d-flex align-items-center">
-                    <span class="post-title text-truncate whitespace-title" :class="{clicked: clickedStore.clickedPostIds.includes(item.post_id)}">
+
+                    <span 
+                        class="post-title text-truncate whitespace-title" 
+                        :class="{clicked: clickedStore.clickedPostIds.includes(item.post_id)}"
+                    >
                         {{ item.title }}
                     </span>
-                    <span v-if="item.reply_count > 0" class="badge bg-secondary rounded-pill ms-2 flex-shrink-0 reply-count">
+                    <span 
+                        v-if="item.reply_count > 0" 
+                        class="badge bg-secondary rounded-pill ms-2 flex-shrink-0 reply-count"
+                    >
                         {{ item.reply_count }} <i class="bi bi-chat-left-text ms-1" />
                     </span>
                 </div>
@@ -23,7 +30,7 @@
                     <div class="post-meta text-muted small d-flex justify-content-between">
                         <span>
                             {{ codeStore.getBoardName(item.board_id) }} <span class="separator"> | </span> {{ codeStore.getBoardType(item.board_id, item.board_type) }} <span class="separator"> | </span>조회 {{ item.view_count }}
-                            <i class="bi bi-hand-thumbs-up-fill text-danger"></i>{{ item.like_count }} <i class="bi bi-hand-thumbs-down-fill text-primary"></i>{{ item.like_count }}
+                            <i class="bi bi-hand-thumbs-up-fill text-danger" />{{ item.like_count }} <i class="bi bi-hand-thumbs-down-fill text-primary" />{{ item.like_count }}
                         </span>
                         <span class="ms-auto">
                             {{ formatBestDatetime(item.reg_datetime) }}
