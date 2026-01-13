@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2 class="list-title">
-            추천게시물
+            추천게시물1
         </h2>
         <div class="post-list-responsive mb-4">
             <div
